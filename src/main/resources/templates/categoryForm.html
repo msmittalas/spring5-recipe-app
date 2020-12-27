@@ -1,0 +1,25 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org">  
+
+<body>
+Manage Categories 
+<div>
+<form  th:action="@{/category/}" th:object="${category}">
+	
+<select>
+	<option th:each="cat : ${categories}" th:value="${cat.id}" th:text="${cat.description}" />
+</select>
+<input type="button"  value="Delete"   onclick="deleteRequest()"/>
+
+</form>
+
+
+</div>
+<div>
+<form  method="post" th:action="@{/category/}"  th:object="${category}">
+	Category Description : <input type="text" th:field="*{description}" /><br/>
+<input type="submit" value="Save" />
+</form>
+</div>
+</body>
+
+</html>
