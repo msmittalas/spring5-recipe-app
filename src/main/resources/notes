@@ -1,0 +1,70 @@
+
+
+
+
+
+
+
+OneToOne :
+
+
+Recipe ----> Note
+
+
+
+
+Recipe {
+
+@OneToOne
+Note note;
+}
+
+Note 
+{
+	@OneToOne(mappedBy="note")
+	Recipe recp;
+
+}
+
+
+OneToMany
+
+Recipe will have many ingredients 
+
+
+Recipe 
+{
+
+@OneToMany(mappedBy="recipe")
+List<Ingredient> ingredients;
+
+}
+
+Ingredients 
+{
+@ManyToOne
+Recipe recipe;
+
+}
+
+
+
+ManyToMany
+
+Recipe
+{
+	@ManyToMany
+	List<Category> cateogories;
+}
+Category
+{
+	@ManyToMany
+	List<Recipe> recipes;
+}
+
+
+
+
+
+
+

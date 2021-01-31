@@ -38,7 +38,6 @@ public class Recipe {
 	private Difficulty difficulty;
 	
 	@ManyToMany
-	@JoinTable(joinColumns =@JoinColumn(name ="recipe_id"),inverseJoinColumns =  @JoinColumn(name ="category_id"))
 	private Set<Category> categories;
 	
 	
@@ -49,7 +48,7 @@ public class Recipe {
 		this.categories = categories;
 	}
 	public Difficulty getDifficulty() {
-		return difficulty;
+		return difficulty; 
 	}
 	public void setDifficulty(Difficulty difficulty) {
 		this.difficulty = difficulty;
